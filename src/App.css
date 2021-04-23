@@ -1,0 +1,6 @@
+
+Carousel.Caption{
+    position: absolute;
+    top: 10%;
+    transform: translateY(-10%);
+  }
