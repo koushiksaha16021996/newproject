@@ -6,6 +6,7 @@ import ImageSlider from './sliderImage/ImageSlider';
 import NavBar from './Navbar/NavBar'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Error from './error/Error';
+import Footer from './Footer/Footer'
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
             <Route exact component={()=><Error/>}/>
           </Switch>
         </BrowserRouter>
-        
+        <Footer/>
     </div>
   );
 }

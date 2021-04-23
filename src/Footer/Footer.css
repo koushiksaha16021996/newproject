@@ -1,7 +1,6 @@
 div.footer {
-    position: absolute;
+    position: relative;
     width: 50%;
-    bottom: 5px;
     left: 45%;
     
 } 
