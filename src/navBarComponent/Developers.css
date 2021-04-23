@@ -1,6 +1,5 @@
 .devbox{
-  margin-top: 50px;
-  margin-bottom:50px ;
+  height: 690px;
 }
 .maincontainer{
   background-color: #222831;
@@ -16,6 +15,7 @@
     box-shadow: 0 10px 30px rgba(235, 25, 110, 1);
     color: white;
     margin: 20px;
+    margin-top: 35px;
   }
   .card__name {
     margin-top: 15px;
