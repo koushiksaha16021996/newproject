@@ -1,0 +1,15 @@
+.logo{
+    width:50px;
+    border-radius: 25px;
+}
+
+.right{
+    margin-left: 80%;
+}
+
+.bg-changed{
+    /* background-color: rgb(182, 126, 165); */
+    background-color: rgb(161, 115, 131);
+}
+
+
