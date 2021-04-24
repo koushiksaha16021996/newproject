@@ -1,4 +1,4 @@
-h5 {
+.atten {
   font-family: "Karantina", cursive;
   font-family: "Poppins", sans-serif;
   font-weight: bolder;
@@ -8,7 +8,7 @@ h5 {
   border: 3px solid black;
   margin-left: 74%;
   border-radius: 5px;
-  margin-top: 10%;
+  text-align: center;
 }
 td {
   font-family: "Karantina", cursive;
@@ -31,42 +31,45 @@ tr:nth-child(even) {
 table,
 td {
   border: 2px solid rgb(104, 119, 106);
+  padding: 15px;
 }
 
 th {
   color: #f5f5f5;
   background-color: rgb(41, 38, 38);
+  padding: 15px;
 }
 
 table {
   margin-top: 2%;
-  margin-left: 67%;
+  margin-left: 68%;
+  padding: 15px;
 }
 
-.fixed_header {
+.tHeader {
   width: 400px;
   table-layout: fixed;
   border-collapse: collapse;
 }
 
-.fixed_header tbody {
+.tHeader tbody {
   display: block;
   width: 100%;
   overflow: auto;
   height: 300px;
 }
 
-.fixed_header thead tr {
+.tHeader thead tr {
   display: inline-block;
 }
 
-.fixed_header th {
+.tHeader th {
   padding: 5px;
   text-align: center;
   width: 200px;
 }
 
-.fixed_header td {
+.tHeader td {
   padding: 5px;
   text-align: center;
   width: 200px;

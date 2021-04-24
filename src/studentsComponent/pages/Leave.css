@@ -10,7 +10,7 @@
     border-radius: 10px;
     color: #f5f5f5;
     margin-bottom: 20px;
-    transform: translate(0px, 150px);
+    transform: translate(0px, 20px);
   }
   
   .form > h1 {
@@ -68,4 +68,7 @@
   
   .form > button:hover {
     background-color: rgb(0, 0, 196);
+  }
+  .labelName{
+    font-size: 20px;
   }

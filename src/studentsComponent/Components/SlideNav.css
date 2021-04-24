@@ -1,11 +1,11 @@
-.navbar {
+.NavBar {
   background-color: #fff;
   height: 80px;
   display: flex;
   justify-content: start;
   align-items: center;
-  margin-top: 5%;
-  position: fixed ;
+  margin-top: 1%;
+  position: static ;
 }
 
 .menu-bars {

@@ -14,7 +14,7 @@ function SlideNav() {
   return (
     <>
       <IconContext.Provider value={{ color: '#000' }}>
-        <div className='navbar'>
+        <div className='NavBar'>
           <Link to='#' className='menu-bars'>
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>

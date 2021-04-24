@@ -9,7 +9,7 @@ const AttendanceSheet = () => {
     },
     {
       roll: 2,
-      name: "Debo Prasad mukherjee",
+      name: "Debo Prasad",
     },
 
     {
@@ -69,9 +69,9 @@ const AttendanceSheet = () => {
 
   return (
     <div className="App">
-      <h5>Attendance Sheet</h5>
+      <h5 className="atten">Attendance Sheet</h5>
 
-      <table className="fixed_header">
+      <table className="tHeader">
         <thead>
           <tr>
             <th>Roll No</th>

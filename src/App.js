@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-//import './App.css';
+import './App.css';
 import About from './navBarComponent/About';
 import Developer from './navBarComponent/Developer';
 import ImageSlider from './sliderImage/ImageSlider';
@@ -14,7 +14,6 @@ function App() {
     <div>
         <BrowserRouter>
           <NavBar/>
-          <SlideNav />
           <Switch>
             <Route exact path="/" component={()=><ImageSlider/>}/>
             <Route exact path="/about" component={()=><About/>}/>
