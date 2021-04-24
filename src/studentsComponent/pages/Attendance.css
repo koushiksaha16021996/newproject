@@ -1,0 +1,73 @@
+h5 {
+  font-family: "Karantina", cursive;
+  font-family: "Poppins", sans-serif;
+  font-weight: bolder;
+  color: #432268;
+  width: 15%;
+  height: 17%;
+  border: 3px solid black;
+  margin-left: 74%;
+  border-radius: 5px;
+  margin-top: 10%;
+}
+td {
+  font-family: "Karantina", cursive;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+}
+
+th {
+  font-family: "Karantina", cursive;
+  font-family: "Poppins", sans-serif;
+  font-weight: bolder;
+}
+tr:nth-child(odd) {
+  background-color: rgb(180, 21, 77);
+}
+tr:nth-child(even) {
+  background-color: azure;
+}
+
+table,
+td {
+  border: 2px solid rgb(104, 119, 106);
+}
+
+th {
+  color: #f5f5f5;
+  background-color: rgb(41, 38, 38);
+}
+
+table {
+  margin-top: 2%;
+  margin-left: 67%;
+}
+
+.fixed_header {
+  width: 400px;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.fixed_header tbody {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  height: 300px;
+}
+
+.fixed_header thead tr {
+  display: inline-block;
+}
+
+.fixed_header th {
+  padding: 5px;
+  text-align: center;
+  width: 200px;
+}
+
+.fixed_header td {
+  padding: 5px;
+  text-align: center;
+  width: 200px;
+}
