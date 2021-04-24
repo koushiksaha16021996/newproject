@@ -17,7 +17,6 @@ function Student_dashboard() {
           <Route path='/feedback' component={Feedback} />
           <Route path='/leave' component={Leave} />
           <Route path='/doubt' component={Doubt} />
-
         </Switch>
       </Router>
     </>
