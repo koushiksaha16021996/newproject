@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import image1 from './images/image2.jpg';
 import image2 from './images/image3.jpg';
 import image3 from './images/Classroom.jpg';
-import { Link } from 'react-router-dom';
+
 
 
 const ImageSlider = () => {
@@ -67,11 +67,6 @@ const handleSelect = (selectedIndex, e) =>
 						<h5 style={styl3}>Meaningful learning can happen. we're here to help with resources to support effective remote learning experiences for students, teachers and families.</h5>
 						<button type="button" className="btn btn-outline-light btn-lg">Faculty</button>
 						<button type="button" className="btn btn-primary btn-lg" style={btnPrimary}><Link to="/student">Students</Link></button>
-=======
-						<h1 style={h1}>Remote Learning With Yodafy</h1>
-						<h5 style={h3}>Meaningful learning can happen. we're here to help with resources to support effective remote learning experiences for students, teachers and families.</h5>
-						<button type="button" className="btn btn-outline-light btn-lg"><Link style={linkcolour} to="/faculty">Faculty</Link></button>
-						<button type="button" className="btn btn-primary btn-lg" style={btnPrimary}><Link style={linkcolour} to="/student">Students</Link></button>
 					</Carousel.Caption>
 				</Carousel.Item>
 				<Carousel.Item>
