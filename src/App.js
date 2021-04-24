@@ -7,6 +7,8 @@ import NavBar from './Navbar/NavBar'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Error from './error/Error';
 import Footer from './Footer/Footer'
+import Teacher_dashboard from './teacherComponet/Teacher_dashboard';
+import Student_dashboard from './studentsComponent/Student_dashboard';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
             <Route exact path="/" component={()=><ImageSlider/>}/>
             <Route exact path="/about" component={()=><About/>}/>
             <Route exact path="/developers" component={()=><Developer/>}/>
+            <Route exact path="/faculty" component={()=><Teacher_dashboard/>}/>
+            <Route exact path="/student" component={()=><Student_dashboard/>}/>
             <Route exact component={()=><Error/>}/>
           </Switch>
         </BrowserRouter>
