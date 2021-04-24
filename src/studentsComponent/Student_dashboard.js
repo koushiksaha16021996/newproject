@@ -1,7 +1,7 @@
 import React from 'react';
 import './Student_dashboard';
 import SlideNav from './Components/SlideNav';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import StudentPortal from './pages/StudentPortal';
 import Feedback from './pages/Feedback';
 import Leave from './pages/Leave';
@@ -13,10 +13,12 @@ function Student_dashboard() {
       <Router>
         <SlideNav />
         <Switch>
-          <Route path='/' exact component={StudentPortal} />
-          <Route path='/feedback' component={Feedback} />
-          <Route path='/leave' component={Leave} />
-          <Route path='/doubt' component={Doubt} />
+                    <Route exact path="/" component={()=><Redirect to="/studentportal"/>}/>
+                    <Route exact path="/student" component={()=><Redirect to="/studentportal"/>}/>
+                    <Route exact path="/studentportal" component={()=><StudentPortal/>}/>
+                    <Route exact path="/feedback" component={()=><Feedback/>}/>
+                    <Route exact path="/leave" component={()=><Leave/>}/>
+                    <Route exact path="/doubt" component={()=><Doubt/>}/>
         </Switch>
       </Router>
     </>

@@ -15,7 +15,7 @@ const Developer=()=>{
           <div className="container-fluid devbox">
             <div className="row">
                 <div className="col-lg-3 col-sm-6 col-ex-12">
-                    <div className="card">
+                    <div className="cards">
                       <img src={azam} alt="Person" className="card__image"/>
                       <p className="card__name">Md Azam</p>
                       <ul className="social-icons">
@@ -28,7 +28,7 @@ const Developer=()=>{
                 </div>
 
                   <div className="col-lg-3 col-sm-6 col-ex-12">
-                    <div className="card">
+                    <div className="cards">
                       <img src={subhasis} alt="Person" className="card__image"/>
                       <p className="card__name">Subhasish Choudhury</p>
                       <ul className="social-icons">
@@ -41,7 +41,7 @@ const Developer=()=>{
                   </div>
 
                   <div className="col-lg-3 col-sm-6 col-ex-12">
-                    <div className="card">
+                    <div className="cards">
                       <img src={deboprasad} alt="Person" className="card__image"/>
                       <p className="card__name">Deboprasad Mukherjee</p>
                       <ul className="social-icons">
@@ -54,7 +54,7 @@ const Developer=()=>{
                   </div>
 
                   <div className="col-lg-3 col-sm-6 col-ex-12">
-                      <div className="card">
+                      <div className="cards">
                       <img src={koushik} alt="Person" className="card__image"/>
                       <p className="card__name">Koushik Saha</p>
                       <ul className="social-icons">
