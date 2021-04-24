@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import image1 from './images/image2.jpg';
 import image2 from './images/image3.jpg';
 import image3 from './images/Classroom.jpg';
+import { Link } from 'react-router-dom';
 
 
 const ImageSlider = () => {
@@ -39,13 +40,15 @@ const ImageSlider = () => {
 	paddingBottom: "1rem",
  }
  const btnPrimary = {
- 	backgroundColor: "#6648b1",
+ 	backgroundColor: "white",
 	border: "1px solid #563d7c",
 	marginLeft: "70px"
   }
+  const linkcolour={
+	  textDecoration:"none"
+  }
 
-
-	const [index, setIndex] = useState(0);
+const [index, setIndex] = useState(0);
 
 const handleSelect = (selectedIndex, e) =>
 {
@@ -59,10 +62,16 @@ const handleSelect = (selectedIndex, e) =>
 				<Carousel.Item>
 					<img className="d-block w-100" src={image1} alt="First image"  style={{height: "100vh"}}/>
 					<Carousel.Caption className="carousel-caption">
+
 						<h1 style={styl1}>Remote Learning With Yodafy</h1>
 						<h5 style={styl3}>Meaningful learning can happen. we're here to help with resources to support effective remote learning experiences for students, teachers and families.</h5>
 						<button type="button" className="btn btn-outline-light btn-lg">Faculty</button>
 						<button type="button" className="btn btn-primary btn-lg" style={btnPrimary}><Link to="/student">Students</Link></button>
+=======
+						<h1 style={h1}>Remote Learning With Yodafy</h1>
+						<h5 style={h3}>Meaningful learning can happen. we're here to help with resources to support effective remote learning experiences for students, teachers and families.</h5>
+						<button type="button" className="btn btn-outline-light btn-lg"><Link style={linkcolour} to="/faculty">Faculty</Link></button>
+						<button type="button" className="btn btn-primary btn-lg" style={btnPrimary}><Link style={linkcolour} to="/student">Students</Link></button>
 					</Carousel.Caption>
 				</Carousel.Item>
 				<Carousel.Item>
