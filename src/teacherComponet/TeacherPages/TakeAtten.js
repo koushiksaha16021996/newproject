@@ -60,10 +60,16 @@ export default function TakeAtten() {
     itemAlign:"center",
     margin: "auto"
   }
+  const st1={
+    textAlign:"center"
+  }
     return (
         <div className="container">
             <table className="table table-striped w-auto" style={st}>
               <thead>
+                <tr className="table-info">
+                  <th colSpan="3" style={st1}>STUDENT ATTENDANCE PORTAL</th>
+                </tr>
                 <tr className="table-info">
                   <th>ROLL</th>
                   <th>NAME</th>

@@ -6,7 +6,8 @@ import TeacherPortal from './TeacherPages/TeacherPortal';
 import StudentInfo from './TeacherPages/StudentInfo';
 import AddStudent from './TeacherPages/AddStudent';
 import FacultyDetails from './TeacherPages/FacultyDetails';
-import TakeAtten from './TeacherPages/TakeAtten';   
+import TakeAtten from './TeacherPages/TakeAtten'; 
+import Viewstudent from './TeacherPages/Viewstudent'  
 
 function Teacher_dashboard() {
   return (
