@@ -54,7 +54,7 @@ const Developer=()=>{
                   </div>
 
                   <div className="col-lg-3 col-sm-6 col-ex-12">
-                      <div className="cards">
+                    <div className="cards">
                       <img src={koushik} alt="Person" className="card__image"/>
                       <p className="card__name">Koushik Saha</p>
                       <ul className="social-icons">

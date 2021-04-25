@@ -1,7 +1,8 @@
 .doubt-pic{
     height:150px;
     width:150px;
-    margin-top: 9%;
+    margin-top: 7%;
+    /* margin-left: 35%; */
     border-radius: 80px;
 }
 
@@ -10,29 +11,25 @@
     font-size: 25px;
     color: rgba(40, 41, 40, 0.863);
     margin-top: 3%;
+    /* margin-left: 3%;
+    margin-right: 3%; */
 }
 
 .subject{
-    width:30%;
+    width:50%;
     /* height: 7%; */
-    margin-left: 1%;
+    /* margin-left: 20%; */
     border: 2px solid blue;
     border-radius: 5px;
     padding: 5px;
 }
 
-.choose-subject{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size:25px;
-    color: rgba(40, 41, 40, 0.863);
-    font-weight: bolder;
-}
 .questions{
-    width: 30%;
+    width: 50%;
     height: 30%;
     margin-left: 7.2%;
     margin-top: 2%;
-    margin-left: 7%;
+    margin-right: 7.5%;
     border: 2px solid blue;
     border-radius: 5px;
     padding: 5px;
@@ -52,31 +49,32 @@
     height: 10%;
 }
 
-.submit-doubt:hover{
-    background-color: aqua;
-    text-decoration: underline;
-}
 .advice{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 22px;
+    /* margin-left: 30%; */
     text-decoration: underline;
 }
 
 .cont{
     background-color: rgb(211, 212, 133);
+
+    width: 60%;
+    margin-left: 25%;
+    border-radius: 20px;
+    text-align: center;
 }
 
 .subButton{
     margin-top: 2%;
-    margin-left: 6%;
+    margin-bottom: 2%;
+
+    /* margin-left: 38%; */
 }
 
 .main-headeer{
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 font-size: 25px;
 font-weight: bolder;
-position: absolute;
-top: 15%;
-left: 44%;
-margin-top: 25px;
+/* margin-left: 35%; */
 }
