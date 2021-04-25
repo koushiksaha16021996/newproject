@@ -14,10 +14,10 @@
   background: none;
 }
 
-.nav-menu {
+.nav-menuu {
   background-color: rgb(180, 21, 77);
   width: 280px;
-  height: 50vh;
+  height: 60vh;
   display: flex;
   justify-content: center;
   position: fixed;
@@ -27,7 +27,7 @@
   margin-top: 5%;
 }
 
-.nav-menu.active {
+.nav-menuu.active {
   left: 0;
   transition: 500ms;
 }

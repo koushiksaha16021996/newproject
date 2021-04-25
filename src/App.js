@@ -20,6 +20,7 @@ function App() {
             <Route exact path="/about" component={()=><About/>}/>
             <Route exact path="/developers" component={()=><Developer/>}/>
             <Route exact path="/student" component={()=><Student_dashboard/>}/>
+            <Route exact path="/faculty" component={()=><Teacher_dashboard/>}/>
             <Route exact component={()=><Error/>}/>
           </Switch>
         </BrowserRouter>
