@@ -1,5 +1,6 @@
 import React from "react";
 import "./Attendance.css";
+import Notice from './Notice'
 
 const AttendanceSheet = () => {
   const students = [
@@ -68,18 +69,29 @@ const AttendanceSheet = () => {
   };
 
   return (
-    <div className="App">
-      <h5 className="atten">Attendance Sheet</h5>
-      <input type="date" className="date-present"/>
-      <table className="tHeader">
-        <thead className="tablehead">
-          <tr className="tablerow">
-            <th className="tablehead1">Roll No</th>
-            <th className="tablehead1">Name</th>
-          </tr>
-        </thead>
-        <tbody className="tablebody">{students.map(renderStudent)}</tbody>
-      </table>
+    <div className="container">
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-lg-6 centerdiv">
+            <Notice/>
+          </div>
+          <div className="col-lg-6">
+              <div className="centerdiv">
+              <h5 className="atten">Attendance Sheet</h5>
+              <input type="date" className="date-present"/>
+              <table className="tHeader">
+                <thead className="tablehead">
+                  <tr className="tablerow">
+                    <th className="tablehead1">Roll No</th>
+                    <th className="tablehead1">Name</th>
+                  </tr>
+                </thead>
+                <tbody className="tablebody">{students.map(renderStudent)}</tbody>
+              </table>
+              </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
