@@ -72,8 +72,8 @@ const renderStudent = (studentsInfor,index) =>{
             <td className = "faculty-body">{studentsInfor?.RollNo}</td>
             <td className = "faculty-body">{studentsInfor?.Name}</td>
             <td className = "faculty-body">{studentsInfor?.Email_id}</td>
-            <td className = "faculty-body"><Link to="#" className="editLink"><AiIcons.AiFillEye /></Link></td>
-            <td className = "faculty-body"><Link to="#" className="editLink"><AiIcons.AiFillEdit /></Link></td>
+            <td className = "faculty-body"><Link to="/viewstudent" className="editLink"><AiIcons.AiFillEye /></Link></td>
+            <td className = "faculty-body"><Link to="/editstudent" className="editLink"><AiIcons.AiFillEdit /></Link></td>
             <td className = "faculty-body"><Link to="#" className="editLink"><AiIcons.AiFillDelete /></Link></td>
             
         </tr>

@@ -8,10 +8,12 @@ import AddStudent from './TeacherPages/AddStudent';
 import FacultyDetails from './TeacherPages/FacultyDetails';
 import TakeAtten from './TeacherPages/TakeAtten'; 
 import Viewstudent from './TeacherPages/Viewstudent'  
+import WelcomeTeacher from './welcometeacher/WelcomeTeacher';
 
 function Teacher_dashboard() {
   return (
     <>
+      <WelcomeTeacher/>
       <Router>
         <SlideNavTeacher />
         <Switch>
@@ -22,6 +24,8 @@ function Teacher_dashboard() {
                 <Route exact path='/addStudent' component={AddStudent} />
                 <Route exact path='/facultyDetails' component={FacultyDetails} />
                 <Route exact path='/takeAttendance' component={TakeAtten} />
+                <Route exact path="/viewstudent" component={Viewstudent}/>
+                <Route exact path="/editstudent" component={AddStudent}/>
         </Switch>
       </Router>
     </>

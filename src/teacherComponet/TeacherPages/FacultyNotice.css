@@ -1,15 +1,15 @@
-.con{
-    
-    
-    border: 3px solid black;
-    width: inherit;
+.con1{
+    border: 2px solid black;
+    width: 30rem;
     background-color: rgb(218, 219, 141);
     border-radius: 5px;
     box-sizing: border-box;
     box-shadow: 0 5px 5px 5px rgb(54, 53, 54);
+    margin: auto;
+    margin-bottom: 20px;
 }
 
-.head{
+.head1{
     font-family: 'Karantina', cursive;
     font-family: 'Poppins', sans-serif;
     font-weight: bolder;
@@ -18,7 +18,7 @@
     text-decoration: underline;
 }
 
-.date-today{
+.date-today1{
     /* position: relative;
     right: 39%; */
     color: red;
@@ -27,7 +27,7 @@
 
 
 
-.link-to-notice{
+.link-to-notice1{
     text-decoration: none;
     color: black;
     text-align: left;
@@ -36,12 +36,10 @@
 
 
 
-.notice-ul{
-    list-style-type:square
-}
 
 
-.link-to-notice{
+
+.link-to-notice1{
     margin-right: 40px;
     text-align: left;
 }
