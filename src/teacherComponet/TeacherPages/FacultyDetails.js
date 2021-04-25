@@ -38,6 +38,21 @@ const FacultyDetails = () => {
                 name:"Subh",
                 specialization:"JavaScript"
             },
+            {
+                teacher_id:7,
+                name:"loki",
+                specialization:"JavaScript"
+            },
+            {
+                teacher_id:8,
+                name:"andrrw",
+                specialization:"HTML"
+            },
+            {
+                teacher_id:9,
+                name:"xfcgc",
+                specialization:"JavaScript"
+            },
             
             
            
