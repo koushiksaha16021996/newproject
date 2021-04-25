@@ -1,9 +1,8 @@
 .con{
-    position: absolute;
-    top:30.7%;
-    left: 21%;
+    position: relative;
+    
     border: 3px solid black;
-    width: 42%;
+    width: inherit;
     background-color: rgb(218, 219, 141);
     border-radius: 5px;
     box-sizing: border-box;

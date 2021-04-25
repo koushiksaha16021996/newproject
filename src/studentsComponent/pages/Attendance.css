@@ -3,12 +3,12 @@
   font-family: "Poppins", sans-serif;
   font-weight: bolder;
   color: #432268;
-  width: 15%;
-  height: 17%;
+  width: 30%;
+  height: inherit;
   border: 3px solid black;
-  margin-left: 74%;
   border-radius: 5px;
   text-align: center;
+  margin: auto;
 }
 .tabledata {
   font-family: "Karantina", cursive;
@@ -42,7 +42,6 @@
 
 .tHeader {
   margin-top: 2%;
-  margin-left: 68%;
   padding: 15px;
 }
 
@@ -50,6 +49,7 @@
   width: 400px;
   table-layout: fixed;
   border-collapse: collapse;
+  margin: auto;
 }
 
 .tHeader .tablebody {
@@ -76,10 +76,14 @@
 }
 
 .date-present{
-  margin-left: 74%;
-  margin-top: 2%;
-  width: 15%;
+
+  margin-left: 32%;
+  width: 35%;
   border: 3px solid gray;
   border-radius: 10px;
   color: #432268;
+  
+}
+.centerdiv{
+  align-items: center;
 }

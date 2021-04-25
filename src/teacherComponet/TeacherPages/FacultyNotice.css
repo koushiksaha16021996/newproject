@@ -1,9 +1,8 @@
 .con{
-    position: absolute;
-    top:30.7%;
-    left: 21%;
+    
+    
     border: 3px solid black;
-    width: 42%;
+    width: inherit;
     background-color: rgb(218, 219, 141);
     border-radius: 5px;
     box-sizing: border-box;
@@ -26,10 +25,7 @@
     font-weight: bolder;
 }
 
-.notice-list{
-    position: relative;
-    right: 3%;
-}
+
 
 .link-to-notice{
     text-decoration: none;
