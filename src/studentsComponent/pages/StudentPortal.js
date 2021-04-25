@@ -70,7 +70,7 @@ const AttendanceSheet = () => {
   return (
     <div className="App">
       <h5 className="atten">Attendance Sheet</h5>
-
+      <input type="date" className="date-present"/>
       <table className="tHeader">
         <thead>
           <tr>
