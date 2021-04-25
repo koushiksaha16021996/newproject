@@ -1,9 +1,4 @@
 .NavBar {
-  background-color: #fff;
-  height: 80px;
-  display: flex;
-  justify-content: start;
-  align-items: center;
   margin-top: 1%;
   position: static ;
 }
