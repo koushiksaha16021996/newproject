@@ -1,0 +1,43 @@
+.faculty-list{
+    margin: auto;
+    margin-top: 5%;
+    border: 3px solid black;
+    border-radius: 10px;
+    width: 50%;
+    box-sizing: border-box;
+    box-shadow: 0 5px 5px 8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+
+.faculty-head{
+    
+    background-color: black;
+    color: azure;
+    font-family: cursive;
+    
+}
+
+.faculty-body{
+    border: 3px solid rgb(109, 51, 1);
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    /* border: 3px solid rgb(238, 146, 66); */
+}
+.design-row:nth-child(odd) {
+  
+    background-color: rgb(223, 22, 92);
+    /* background-color: rgb(180, 21, 77); */
+  }
+  .design-row:nth-child(even) {
+    background-color: rgb(95, 145, 145);
+  }
+  
+  .faculty-main-header{
+      margin-top: 4%;
+      /* border: 3px solid crimson; */
+      width: 10%;
+      margin-left: 43%;
+      text-shadow: 2px 2px 4px;
+      font-size: 25px;
+  }
