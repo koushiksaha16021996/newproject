@@ -65,7 +65,7 @@ const handleSelect = (selectedIndex, e) =>
 
 						<h1 style={styl1}>Remote Learning With Yodafy</h1>
 						<h5 style={styl3}>Meaningful learning can happen. we're here to help with resources to support effective remote learning experiences for students, teachers and families.</h5>
-						<button type="button" className="btn btn-outline-light btn-lg">Faculty</button>
+						<button type="button" className="btn btn-outline-light btn-lg"><Link to="/faculty">Faculty</Link></button>
 						<button type="button" className="btn btn-primary btn-lg" style={btnPrimary}><Link to="/student">Students</Link></button>
 					</Carousel.Caption>
 				</Carousel.Item>

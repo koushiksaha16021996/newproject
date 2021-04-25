@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import { SidebarData } from './SidebarData';
-import './SlideNav.css';
+import { SidebarData } from './SidebarDataTeacher';
+import './SlideNavTeacher.css';
 import { IconContext } from 'react-icons';
 
-function SlideNav() {
+function SlideNavTeacher() {
   const [sidebar, setSidebar] = useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);
@@ -14,7 +14,7 @@ function SlideNav() {
   return (
     <>
       <IconContext.Provider value={{ color: '#000' }}>
-        <div className='NavBar1'>
+        <div className='NavBar'>
           <Link to='#' className='menu-bars'>
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
@@ -43,4 +43,4 @@ function SlideNav() {
   );
 }
 
-export default SlideNav;
+export default SlideNavTeacher;
