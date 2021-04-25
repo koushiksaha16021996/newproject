@@ -60,9 +60,9 @@ const AttendanceSheet = () => {
 
   const renderStudent = (student, index) => {
     return (
-      <tr key={index}>
-        <td>{student.roll}</td>
-        <td>{student.name}</td>
+      <tr className="tablerow" key={index}>
+        <td className="tabledata">{student.roll}</td>
+        <td className="tabledata">{student.name}</td>
       </tr>
     );
   };
@@ -72,13 +72,13 @@ const AttendanceSheet = () => {
       <h5 className="atten">Attendance Sheet</h5>
       <input type="date" className="date-present"/>
       <table className="tHeader">
-        <thead>
-          <tr>
-            <th>Roll No</th>
-            <th>Name</th>
+        <thead className="tablehead">
+          <tr className="tablerow">
+            <th className="tablehead1">Roll No</th>
+            <th className="tablehead1">Name</th>
           </tr>
         </thead>
-        <tbody>{students.map(renderStudent)}</tbody>
+        <tbody className="tablebody">{students.map(renderStudent)}</tbody>
       </table>
     </div>
   );
