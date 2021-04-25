@@ -6,10 +6,12 @@ import StudentPortal from './pages/StudentPortal';
 import Feedback from './pages/Feedback';
 import Leave from './pages/Leave';
 import Doubt from './pages/Doubt';
+import Welcomestud from './welcomecomponent/Welcomestud'
 
 function Student_dashboard() {
   return (
     <>
+    <Welcomestud/>
       <Router>
         <SlideNav />
         <Switch>
