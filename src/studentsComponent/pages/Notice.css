@@ -1,12 +1,13 @@
 .con{
     position: relative;
-    
+    margin-left: auto;
     border: 3px solid black;
-    width: inherit;
+    width: 70%;
     background-color: rgb(218, 219, 141);
     border-radius: 5px;
     box-sizing: border-box;
     box-shadow: 0 5px 5px 5px rgb(54, 53, 54);
+    margin-bottom: 10px;
 }
 
 .head{

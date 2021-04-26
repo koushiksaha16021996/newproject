@@ -15,11 +15,11 @@
   height: 60vh;
   display: flex;
   justify-content: center;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: -80%;
   transition: 500ms;
-  margin-top: 5%;
+  margin-top: 8%;
 }
 
 .nav-menuu.active {
