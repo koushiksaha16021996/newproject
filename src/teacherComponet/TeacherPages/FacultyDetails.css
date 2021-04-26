@@ -3,7 +3,7 @@
     box-sizing: border-box;
     width: 65%;
     height: 80vh;
-    border: 1px solid rgb(228, 49, 49);
+    border: 1px solid rgb(14, 13, 13);
     border-radius: 20px;
     box-shadow: 4px 4px 8px black;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -21,24 +21,26 @@
 }
 
 .faculty-body{
-    border: 3px solid rgb(228, 49, 49);
+    border: 1px solid rgb(14, 13, 13);
     font-family:Arial, Helvetica, sans-serif;
     font-weight: bold;
+    color: rgb(15, 10, 10);
     text-align: center;
     /* border: 3px solid rgb(238, 146, 66); */
 }
 .design-row:nth-child(odd) {
   
-    background-color: rgb(216, 133, 162);
+    background-color: rgb(141, 161, 133);
     /* background-color: rgb(180, 21, 77); */
   }
   .design-row:nth-child(even) {
-    background-color: rgb(135, 177, 177);
+    background-color: rgb(177, 231, 169);
   }
   
   .faculty-main-header{
       padding: 55px;
-      margin-left: 39%;
+      /* margin-left: 39%; */
+      text-align: center;
       text-shadow: 1px 1px 8px #120b4e;
       font-size: 45px;
       
