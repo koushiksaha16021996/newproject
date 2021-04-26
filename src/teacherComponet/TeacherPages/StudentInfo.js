@@ -83,7 +83,7 @@ const renderStudent = (studentsInfor,index) =>{
 
     return (
         <div className="App">
-                <h5 className = "faculty-main-header">
+                <h5 className = "faculty-main-header" style={{marginTop: "1px"}}>
                     Student's Information
                 </h5>
 
