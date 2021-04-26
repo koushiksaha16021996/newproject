@@ -9,6 +9,7 @@ import Error from './error/Error';
 import Footer from './Footer/Footer';
 import Teacher_dashboard from './teacherComponet/Teacher_dashboard';
 import Student_dashboard from './studentsComponent/Student_dashboard';
+import Login from './LoginPage/Login';
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
             <Route exact path="/" component={()=><ImageSlider/>}/>
             <Route exact path="/about" component={()=><About/>}/>
             <Route exact path="/developers" component={()=><Developer/>}/>
-            <Route exact path="/student" component={()=><Student_dashboard/>}/>
+            <Route exact path="/student" component={()=><Login/>}/>
+            <Route exact path="/login" component={()=><Student_dashboard/>}/>
             <Route exact path="/faculty" component={()=><Teacher_dashboard/>}/>
             <Route exact component={()=><Error/>}/>
           </Switch>

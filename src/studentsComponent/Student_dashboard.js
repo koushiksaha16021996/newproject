@@ -16,7 +16,7 @@ function Student_dashboard() {
         <SlideNav />
         <Switch>
                     <Route exact path="/" component={()=><Redirect to="/studentportal"/>}/>
-                    <Route exact path="/student" component={()=><Redirect to="/studentportal"/>}/>
+                    <Route exact path="/login" component={()=><Redirect to="/studentportal"/>}/>
                     <Route exact path="/studentportal" component={()=><StudentPortal/>}/>
                     <Route exact path="/feedback" component={()=><Feedback/>}/>
                     <Route exact path="/leave" component={()=><Leave/>}/>

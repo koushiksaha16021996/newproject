@@ -5,18 +5,20 @@
     justify-content: center;
     margin-left: 22%;
     margin-right: 16%;
-    background-color: rgb(180, 21, 77);
+    background-color: #f5f5f5;
     padding: 20px;
     border-radius: 10px;
     color: #f5f5f5;
     margin-bottom: 20px;
     transform: translate(0px, 20px);
+    
   }
   
   .form > h1 {
     margin-bottom: 30px;
     text-align: center;
     text-shadow: 2px 2px 5px black;
+    color: black;
   }
   
   .form > input,
