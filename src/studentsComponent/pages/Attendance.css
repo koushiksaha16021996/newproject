@@ -1,14 +1,19 @@
+.container{
+  margin-left: 30%;
+}
 .atten {
   font-family: "Karantina", cursive;
   font-family: "Poppins", sans-serif;
   font-weight: bolder;
   color: #432268;
-  width: 30%;
-  height: inherit;
+  width: 40%;
+  margin-top: 0%;
+  margin-bottom: 10px;
+  margin-left: 30%;
   border: 3px solid black;
   border-radius: 5px;
   text-align: center;
-  margin: auto;
+
 }
 .tabledata {
   font-family: "Karantina", cursive;
@@ -76,14 +81,15 @@
 }
 
 .date-present{
-
-  margin-left: 32%;
+  margin-bottom: 10px;
+  margin-left: 32.5%;
   width: 35%;
   border: 3px solid gray;
-  border-radius: 10px;
+  border-radius: 7px;
   color: #432268;
   
 }
 .centerdiv{
   align-items: center;
+  border: 1px 1px 1px solid black
 }
