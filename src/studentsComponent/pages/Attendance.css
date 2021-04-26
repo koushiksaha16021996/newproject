@@ -27,15 +27,15 @@
   font-weight: bolder;
 }
 .tablerow:nth-child(odd) {
-  background-color: rgb(180, 21, 77);
+  background-color: rgb(147, 168, 162);
 }
 .tablerow:nth-child(even) {
-  background-color: azure;
+  background-color: rgb(213, 223, 171);
 }
 
 .tHeader,
 .tabledata {
-  border: 2px solid rgb(104, 119, 106);
+  border: 1px solid rgb(36, 34, 34);
   padding: 15px;
 }
 
