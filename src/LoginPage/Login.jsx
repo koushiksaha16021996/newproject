@@ -10,13 +10,13 @@ export default function Login() {
                 <h1 className="loginHead">Log in</h1>
 
                 <div className="form-group">
-                    <label className="loginLabel">Name</label>
-                    <input type="text" className="form-control" placeholder="Enter Your Name" />
+                    <label className="loginLabel">Email Id</label>
+                    <input type="text" className="form-control" placeholder="Enter Your email id" />
                 </div>
 
                 <div className="form-group">
-                    <label className="loginLabel">Roll No</label>
-                    <input type="number" className="form-control" placeholder="Enter your Roll no." />
+                    <label className="loginLabel">Password</label>
+                    <input type="number" className="form-control" placeholder="Enter your password" />
                 </div>
 
                 <div className="form-group">
@@ -29,6 +29,9 @@ export default function Login() {
                 <button type="submit" className="btn btn-dark btn-lg btn-block"><Link to="login">Sign in</Link></button>
                 <p className="forgot-password text-right">
                     Forgot <a href="#">password?</a>
+                </p>
+                <p className="forgot-password text-right">
+                    Don't have an account <Link to="/register">Sign Up</Link>
                 </p>
             </form>
         </div>

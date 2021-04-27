@@ -10,6 +10,7 @@ import Footer from './Footer/Footer';
 import Teacher_dashboard from './teacherComponet/Teacher_dashboard';
 import Student_dashboard from './studentsComponent/Student_dashboard';
 import Login from './LoginPage/Login';
+import Register from './RegisterPage/Register';
 
 function App() {
   return (
@@ -22,7 +23,10 @@ function App() {
             <Route exact path="/developers" component={()=><Developer/>}/>
             <Route exact path="/student" component={()=><Login/>}/>
             <Route exact path="/login" component={()=><Student_dashboard/>}/>
-            <Route exact path="/faculty" component={()=><Teacher_dashboard/>}/>
+            <Route exact path="/loginpage" component={()=><Login/>}/>
+            <Route exact path="/register" component={()=><Register/>}/>
+            <Route exact path="/faculty" component={()=><Login/>}/>
+            <Route exact path="/login" component={()=><Teacher_dashboard/>}/>
             <Route exact component={()=><Error/>}/>
           </Switch>
         </BrowserRouter>
