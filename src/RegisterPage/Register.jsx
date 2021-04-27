@@ -34,7 +34,7 @@ export default function Register() {
                     </div>
                 </div>
 
-                <button type="submit" className="btn btn-dark btn-lg btn-block"><Link to="login">Sign Up</Link></button>
+                <button type="submit" className="btn btn-dark btn-lg btn-block"><Link to="register">Sign Up</Link></button>
                 <p className="forgot-password text-right">
                 Already have an account? <a href="#">Sign in</a>
                 </p>
