@@ -9,6 +9,7 @@ import FacultyDetails from './TeacherPages/FacultyDetails';
 import TakeAtten from './TeacherPages/TakeAtten'; 
 import Viewstudent from './TeacherPages/Viewstudent'  
 import WelcomeTeacher from './welcometeacher/WelcomeTeacher';
+import EditStudent from './TeacherPages/EditStudent';
 
 function Teacher_dashboard() {
   return (
@@ -26,6 +27,7 @@ function Teacher_dashboard() {
                 <Route exact path='/takeAttendance' component={TakeAtten} />
                 <Route exact path="/viewstudent/:id" component={(props)=><Viewstudent ID={props.match.params.id}/>}/>
                 <Route exact path="/editstudent" component={AddStudent}/>
+                <Route exact path="/editstudent/:id" component={(props)=><EditStudent ID={props.match.params.id} />}/>
         </Switch>
       </Router>
     </>

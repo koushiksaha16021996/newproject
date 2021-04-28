@@ -57,7 +57,7 @@ import { Link } from 'react-router-dom';
                                  <td className = "faculty-body">{info?.name}</td>
                                  <td className = "faculty-body">{info?.email}</td>
                                  <td className = "faculty-body"><Link to={`/viewstudent/${info?._id}`} className="editLink"><AiIcons.AiFillEye /></Link></td>
-            <td className = "faculty-body"><Link to="/editstudent" className="editLink"><AiIcons.AiFillEdit /></Link></td>
+            <td className = "faculty-body"><Link to={`/editstudent/${info?._id}`} className="editLink"><AiIcons.AiFillEdit /></Link></td>
                <td className = "faculty-body"><Link to="#" className="editLink" onClick={()=>this.deletes(info?._id)}><AiIcons.AiFillDelete /></Link></td>
                              </tr>
                          )
