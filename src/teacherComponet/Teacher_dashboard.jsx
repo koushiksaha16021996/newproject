@@ -24,7 +24,7 @@ function Teacher_dashboard() {
                 <Route exact path='/addStudent' component={AddStudent} />
                 <Route exact path='/facultyDetails' component={FacultyDetails} />
                 <Route exact path='/takeAttendance' component={TakeAtten} />
-                <Route exact path="/viewstudent" component={Viewstudent}/>
+                <Route exact path="/viewstudent/:id" component={(props)=><Viewstudent ID={props.match.params.id}/>}/>
                 <Route exact path="/editstudent" component={AddStudent}/>
         </Switch>
       </Router>

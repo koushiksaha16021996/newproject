@@ -21,6 +21,18 @@ import { Link } from 'react-router-dom';
              console.log(this.state.studentinfo)  
          })
      }
+     deletes=(id)=>{
+        axios.delete(`http://localhost:4000/students/${id}`).then(res=>{
+            axios.get("http://localhost:4000/students").then(res=>{
+             console.log(res.data) 
+             this.setState({
+                 ...this.state,
+                 studentinfo: res.data
+             })
+             console.log(this.state.studentinfo)  
+         })
+        })
+     }
      render(){
          console.log(this.state.studentinfo)
          return (
@@ -44,9 +56,9 @@ import { Link } from 'react-router-dom';
                                  <td className = "faculty-body">{info?.roll}</td>
                                  <td className = "faculty-body">{info?.name}</td>
                                  <td className = "faculty-body">{info?.email}</td>
-                                 <td className = "faculty-body"><Link to="/viewstudent" className="editLink"><AiIcons.AiFillEye /></Link></td>
+                                 <td className = "faculty-body"><Link to={`/viewstudent/${info?._id}`} className="editLink"><AiIcons.AiFillEye /></Link></td>
             <td className = "faculty-body"><Link to="/editstudent" className="editLink"><AiIcons.AiFillEdit /></Link></td>
-               <td className = "faculty-body"><Link to="#" className="editLink"><AiIcons.AiFillDelete /></Link></td>
+               <td className = "faculty-body"><Link to="#" className="editLink" onClick={()=>this.deletes(info?._id)}><AiIcons.AiFillDelete /></Link></td>
                              </tr>
                          )
                      })}
