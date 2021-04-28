@@ -1,8 +1,47 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import axios from 'axios';
+import React, { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import './Login.css';
 
 export default function StudLogin() {
+    const history=useHistory();
+    const [user,setUser]=useState({
+        "email":"",
+        "password": ""
+    })
+    let name,value
+const handleChange=(e)=>{
+        name=e.target.name
+        value=e.target.value
+        setUser({
+            ...user,
+            [name]:value
+        })
+
+    }
+const handleClick=()=>{
+    console.log(user.email)
+    if(!user.email || !user.password){
+        alert("-----invalid credentials-----")
+        return;
+    }
+    axios.get(`http://localhost:4000/students/${user.email}`).then(res=>{
+        if(res.data){
+            if(res.data.email===user.email && res.data.password===user.password){
+                alert("Login successful")
+                history.push("/studentlogin")
+            }
+            else{
+                alert("-----invalid credentials-----")
+            }
+        }
+        else{
+            alert("No matched User found")
+            return;
+        }
+        console.log(res.data)
+    })
+}
     return (
         <div>
             <form className="LoginPage">
@@ -11,22 +50,16 @@ export default function StudLogin() {
 
                 <div className="form-group">
                     <label className="loginLabel">Email Id</label>
-                    <input type="text" className="form-control" placeholder="Enter Your email id" />
+                    <input type="text" className="form-control" name="email" value={user.email} placeholder="Enter Your email id" onChange={handleChange}/>
                 </div>
 
                 <div className="form-group">
                     <label className="loginLabel">Password</label>
-                    <input type="number" className="form-control" placeholder="Enter your password" />
+                    <input type="password" className="form-control" name="password" value={user.password} placeholder="Enter your password" onChange={handleChange}/>
                 </div>
 
-                <div className="form-group">
-                    <div className="custom-control custom-checkbox">
-                        <input type="checkbox" className="custom-control-input" id="customCheck1" />
-                        <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
-                    </div>
-                </div>
 
-                <button type="submit" className="btn btn-dark btn-lg btn-block"><Link to="/studentlogin">Sign in</Link></button>
+                <button type="button" className="btn btn-dark btn-lg btn-block" onClick={()=>handleClick()}>Sign in</button>
                 <p className="forgot-password text-right">
                     Forgot <a href="#">password?</a>
                 </p>

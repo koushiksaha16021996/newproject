@@ -25,18 +25,18 @@ const handleInput=(e)=>{
 
 const handlepost=()=>{
     //e.preventDefault();
-   param.append("name", user.roll); 
+   param.append("roll", user.roll); 
    param.append("name", user.name);
    param.append("email", user.email);
    param.append("password", user.password);
-    axios.post("http://localhost:4000/user", param,{
+    axios.post("http://localhost:4000/student", param,{
         headers:{
             'content-Type': 'application/x-www-form-urlencoded'
         }
     }).then(res=>{
         window.alert("Registration Successful")
         console.log("ok")
-        history.push("/loginpage")
+        history.push("/studlogin")
     })
 
 }
@@ -67,7 +67,7 @@ const handlepost=()=>{
                     <input type="password" className="form-control" placeholder="Enter your Password." name="password" value={user.password} onChange={handleInput}/>
                 </div>
                                                                                 
-                <button type="button" className="btn btn-dark btn-lg btn-block" onClick={()=>handlepost()}><Link to="/studRegister">Sign Up</Link></button>
+                <button type="button" className="btn btn-dark btn-lg btn-block" onClick={()=>handlepost()}>Sign Up</button>
                 <p className="forgot-password text-right">
                 Already have an account? <Link to="/studlogin">Sign in</Link>
                 </p>

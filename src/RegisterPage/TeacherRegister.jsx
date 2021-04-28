@@ -30,14 +30,14 @@ const handlepost=()=>{
    param.append("email", user.email);
    param.append("password", user.password);
    param.append("specialization", user.specialization);
-    axios.post("http://localhost:4000/user", param,{
+    axios.post("http://localhost:4000/teacher", param,{
         headers:{
             'content-Type': 'application/x-www-form-urlencoded'
         }
     }).then(res=>{
         window.alert("Registration Successful")
         console.log("ok")
-        history.push("/loginpage")
+        history.push("/teachlogin")
     })
 
 }
@@ -71,7 +71,7 @@ const handlepost=()=>{
                     <input type="text" className="form-control" placeholder="Enter your specialization." name="specialization" value={user.specialization} onChange={handleInput}/>
                 </div>
                                                                                 
-                <button type="button" className="btn btn-dark btn-lg btn-block" onClick={()=>handlepost()}><Link to="/teachRegister">Sign Up</Link></button>
+                <button type="button" className="btn btn-dark btn-lg btn-block" onClick={()=>handlepost()}>Sign Up</button>
                 <p className="forgot-password text-right">
                 Already have an account? <Link to="/teachlogin">Sign in</Link>
                 </p>
