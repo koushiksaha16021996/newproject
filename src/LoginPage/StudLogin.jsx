@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Login.css';
 
-export default function Login() {
+export default function StudLogin() {
     return (
         <div>
             <form className="LoginPage">
@@ -26,12 +26,12 @@ export default function Login() {
                     </div>
                 </div>
 
-                <button type="submit" className="btn btn-dark btn-lg btn-block"><Link to="login">Sign in</Link></button>
+                <button type="submit" className="btn btn-dark btn-lg btn-block"><Link to="/studentlogin">Sign in</Link></button>
                 <p className="forgot-password text-right">
                     Forgot <a href="#">password?</a>
                 </p>
                 <p className="forgot-password text-right">
-                    Don't have an account <Link to="/register">Sign Up</Link>
+                    Don't have an account <Link to="/studentRegister">Sign Up</Link>
                 </p>
             </form>
         </div>

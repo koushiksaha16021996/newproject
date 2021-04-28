@@ -18,7 +18,7 @@ function Teacher_dashboard() {
         <SlideNavTeacher />
         <Switch>
                 <Route exact path="/" component={()=><Redirect to="/teacherportal"/>}/>
-                <Route exact path="/faculty" component={()=><Redirect to="/teacherportal"/>}/>
+                <Route exact path="/teacherlogin" component={()=><Redirect to="/teacherportal"/>}/>
                 <Route exact path='/teacherportal' component={TeacherPortal} />
                 <Route exact path='/studentinfo' component={StudentInfo} />
                 <Route exact path='/addStudent' component={AddStudent} />
