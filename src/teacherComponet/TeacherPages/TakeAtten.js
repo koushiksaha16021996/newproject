@@ -1,74 +1,63 @@
-import React from 'react'
+import axios from 'axios';
+import React, { Component } from 'react'
 
-export default function TakeAtten() {
-  const students = [
-    {
-      roll: 1,
-      name: "Subhasish Choudhury",
-    },
-    {
-      roll: 2,
-      name: "Debo Prasad",
-    },
-
-    {
-      roll: 3,
-      name: "Prasad mukherjee",
-    },
-
-    {
-      roll: 4,
-      name: "Md Azam",
-    },
-
-    {
-      roll: 5,
-      name: "Koushik Saha",
-    },
-
-    {
-      roll: 6,
-      name: "Indus Net",
-    },
-
-    {
-      roll: 7,
-      name: "Bumrah",
-    },
-
-    {
-      roll: 8,
-      name: "Virat kohli",
-    },
-
-    {
-      roll: 9,
-      name: "Sayan Choudhury",
-    },
-
-    {
-      roll: 10,
-      name: "Suman Choudhury",
-    },
-
-    {
-      roll: 2,
-      name: "Debo Prasad mukherjee",
-    },
-  ];
-  const st={
-    itemAlign:"center",
-    margin: "auto"
+export default class TakeAtten extends Component {
+  constructor(){
+    super();
+    this.state={
+      students:[]
+    }
+    this.st={
+      itemAlign:"center",
+      margin: "auto"
+    }
+    this.st1={
+      textAlign:"center"
+    }
+    this.param=new URLSearchParams();
   }
-  const st1={
-    textAlign:"center"
+  componentDidMount(){
+    axios.get("http://localhost:4000/students").then(res=>{
+      this.setState({
+        students:res.data
+      })
+    })
   }
+  ispresent=(id)=>{
+    axios.get(`http://localhost:4000/student/${id}`).then(res=>{
+      if(res.data.ispresent){
+        this.param.append("ispresent" , false)
+      }
+      else{
+        this.param.append("ispresent" , true)
+      }
+    })
+    
+    //this.param.append("ispresent" , true)
+    axios.put(`http://localhost:4000/students/${id}` , this.param , {
+      headers:{
+          'content-Type': 'application/x-www-form-urlencoded'
+      }
+  }).then(res=>{
+    axios.get("http://localhost:4000/students").then(res=>{
+      this.setState({
+        students:res.data
+      })
+      console.log("stateupdated")
+    })
+    console.log("attendance state changed")
+    console.log(id)
+    
+  })
+  this.param=new URLSearchParams();
+  }
+  render() {
     return (
-        <div className="container">
-            <table className="table table-striped w-auto" style={st}>
+      <div>
+          <table className="table table-striped w-auto" style={this.st}>
               <thead>
                 <tr className="table-info">
-                  <th colSpan="3" style={st1}>STUDENT ATTENDANCE PORTAL</th>
+                  <th colSpan="3" style={this.st1}>STUDENT ATTENDANCE PORTAL</th>
                 </tr>
                 <tr className="table-info">
                   <th>ROLL</th>
@@ -77,13 +66,14 @@ export default function TakeAtten() {
                 </tr>
               </thead>
               <tbody>
-                {students.map(s=><tr>
+                {this.state.students.map((s,index)=><tr>
                   <th>{s.roll}</th>
                   <td>{s.name}</td>
-                  <td><button>click to present</button></td>
+                  <td><button onClick={()=>this.ispresent(s._id)}>{!this.state.students[index].ispresent?"Click for present" : "Click for Absent"}</button></td>
                 </tr>)}
               </tbody>
             </table>
-        </div>
+      </div>
     )
+  }
 }

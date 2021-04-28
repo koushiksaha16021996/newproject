@@ -5,11 +5,14 @@ import './Register.css';
 
 export default function StudentRegister() {
     const history = useHistory()
+    const date=new Date()
     const [user,setUser]=useState({
         "roll":"",
         "name":"",
         "email":"",
-        "password":""
+        "password":"",
+        "ispresent":false,
+        "attendanceTime":""
     })
     const param=new URLSearchParams();
     let name, value
@@ -39,7 +42,7 @@ const handlepost=()=>{
         history.push("/studlogin")
 
     })
-
+    console.log(user.ispresent)
 }
 
 
