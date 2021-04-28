@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import axios from 'axios'
+import axios from 'axios';
 import './Register.css';
 
 export default function StudentRegister() {
@@ -37,6 +37,7 @@ const handlepost=()=>{
         window.alert("Registration Successful")
         console.log("ok")
         history.push("/studlogin")
+
     })
 
 }
