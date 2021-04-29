@@ -19,7 +19,7 @@ const Doubt = () => {
 
   const param=new URLSearchParams();
   const handleSubmit=()=>{
-  param.append("value", user.value);
+
    param.append("message", user.message);
     axios.post("http://localhost:4000/mail", param,{
         headers:{
@@ -62,12 +62,12 @@ const Doubt = () => {
       
             <form>
               {/* <span className="choose-subject">Subject:</span>  */}
-              <select className="subject" aria-label="Default select example" value={user.value}  onChange={handleChange}> 
+              <select className="subject" aria-label="Default select example" > 
                 <option selected>Choose Subject you have doubts</option>
-                <option name="HTML" value="HTML">HTML</option>
-                <option name="CSS" value="CSS">CSS</option>
-                <option name="React" value="React">React</option>
-                <option name="ReactNative" value="ReactNative">ReactNative</option>
+                <option value="HTML">HTML</option>
+                <option value="CSS">CSS</option>
+                <option value="React">React</option>
+                <option value="ReactNative">ReactNative</option>
                 </select>
                 
                 
