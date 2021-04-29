@@ -5,7 +5,11 @@ export default class TakeAtten extends Component {
   constructor(){
     super();
     this.state={
-      students:[]
+      students:[],
+      attendance:{
+        date:'',
+        students:[]
+      }
     }
     this.st={
       itemAlign:"center",
@@ -15,6 +19,10 @@ export default class TakeAtten extends Component {
       textAlign:"center"
     }
     this.param=new URLSearchParams();
+    //this.date=new Date();
+
+
+
   }
   componentDidMount(){
     axios.get("http://localhost:4000/students").then(res=>{
@@ -22,34 +30,60 @@ export default class TakeAtten extends Component {
         students:res.data
       })
     })
+    var d= new Date();
+    var D= d.getDate()+"-"+(d.getMonth()+1)+"-"+d.getFullYear();
+    this.setState({
+      ...this.state,
+      attendance:{
+        ...this.state.attendance,
+        date:D
+      }
+    })
   }
   ispresent=(id)=>{
-    axios.get(`http://localhost:4000/student/${id}`).then(res=>{
-      if(res.data.ispresent){
-        this.param.append("ispresent" , false)
-      }
-      else{
-        this.param.append("ispresent" , true)
-      }
-    })
     
-    //this.param.append("ispresent" , true)
-    axios.put(`http://localhost:4000/students/${id}` , this.param , {
-      headers:{
-          'content-Type': 'application/x-www-form-urlencoded'
-      }
-  }).then(res=>{
-    axios.get("http://localhost:4000/students").then(res=>{
+    if(this.state.attendance.students.includes(id)){
+      var newstudents=this.state.attendance.students.filter(item=>item!==id)
       this.setState({
-        students:res.data
+        ...this.state,
+        attendance:{
+          ...this.state.attendance,
+          students:newstudents
+        }
       })
-      console.log("stateupdated")
+    }
+    else{
+      this.setState({
+        ...this.state,
+        attendance:{
+          ...this.state.attendance,
+          students:[...this.state.attendance.students,id]
+        }
+      })
+    }
+    console.log("all students",this.state.students)
+    console.log(this.state.attendance.students)
+  }
+  handleSubmit=()=>{
+    //var date=this.date.getDay()+"-"+this.date.getMonth()+1+"-"+this.date.getFullYear()
+    //this.setState({
+    //  ...this.state,
+    //    attendance:{
+    //      name:date
+    //    }
+    //})
+    this.param.append("date" , this.state.attendance.date)
+    this.param.append("students" , this.state.attendance.students)
+    axios.post("http://localhost:4000/attendance",this.param,{
+        headers:{
+            'content-Type': 'application/x-www-form-urlencoded'
+        }
+    }).then(res=>{
+      console.log("attendance done")
     })
-    console.log("attendance state changed")
-    console.log(id)
-    
-  })
-  this.param=new URLSearchParams();
+    this.param=new URLSearchParams();
+    console.log("clicked",this.state.attendance.date)
+
   }
   render() {
     return (
@@ -66,13 +100,16 @@ export default class TakeAtten extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.state.students.map((s,index)=><tr>
+                {this.state.students.map(s=><tr>
                   <th>{s.roll}</th>
                   <td>{s.name}</td>
-                  <td><button onClick={()=>this.ispresent(s._id)}>{!this.state.students[index].ispresent?"Click for present" : "Click for Absent"}</button></td>
+                  <td><button className="btn btn-primary" onClick={()=>this.ispresent(s?._id)}>{
+                    this.state.attendance.students.includes(s?._id) ? "click to absent" : "click to present"
+                  }</button></td>
                 </tr>)}
               </tbody>
             </table>
+            <button  className="btn btn-danger" onClick={()=>this.handleSubmit()}>submit</button>
       </div>
     )
   }
