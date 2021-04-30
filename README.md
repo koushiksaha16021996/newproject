@@ -2,6 +2,19 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Prerequites of this Project
+
+### Create react App 
+At first you have to create a react app by writing npm create-react-app in command prompt. For Creating React App node js must be install in your system.
+
+### install these packages
+ These pacakges must be installed in the folder of your react app
+  #### npm i react-router-dom
+  #### npm i react-bootstrap
+  #### npm i react-icons
+  #### npm i axios
+  
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -38,6 +51,20 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## For the Server Side
+As in this project we have backend too. so we have to install some packages for backend too.
+
+### Packages intall for backend
+
+  #### npm i cors
+  #### npm i express
+  #### npm i mongoose
+
+### `nodemon`
+Runs the app in the development mode.\. Write nodemon index.js
+Open [http://localhost:4000](http://localhost:4000) to view it in the browser.
+
 
 ## Learn More
 
