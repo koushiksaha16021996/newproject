@@ -53,10 +53,10 @@ class AttendanceSheet extends Component {
         this.setState({
           attendance : res.data
         })
-        console.log(this.state.attendance.students[0].length)
-        this.state.attendance.students.map(item=>{
-          console.log(item)
-        })
+        //console.log(this.state.attendance.students[0].length)
+       // this.state.attendance.students.map(item=>{
+       //   console.log(item)
+       // })
     }) 
   }
   
@@ -123,10 +123,11 @@ class AttendanceSheet extends Component {
                       <th className="tablehead1">Name</th>
                     </tr>
                   </thead>
-                  <tbody className="tablebody">{this.state.attendance.students.map(item=><tr className="tablerow">
-  <td className="tabledata">{item}</td>
-  
-</tr>)}</tbody>
+                 {/*} <tbody className="tablebody">{this.state.attendance.students.map(item =><tr className="tablerow">
+                                                                                      <td className="tabledata">{item.Students}</td> 
+                                                                                        </tr>)} 
+                  </tbody>*/}
+
                 </table>
                 </div>
             </div>
