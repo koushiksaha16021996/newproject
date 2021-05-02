@@ -47,6 +47,8 @@ console.log(this.state.writeTeachFeed);
       .then((res) => {
         alert("feedback sent");
         console.log("Feedback Sent");
+        
+        
       },this.resetForm()).catch(() => {
         console.log('Feeback not sent')
         alert('Feeback not sent')
