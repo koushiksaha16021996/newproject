@@ -6,15 +6,16 @@ export default class Feedback extends Component {
   constructor() {
     super();
     this.params = new URLSearchParams();
+    this.resetForm();
     this.state = {
-      selectTeach: "",
-      writeTeachFeed: "",
-      feedbackOptions: "",
-      givefeedback: "",
-      id: "",
-      teacherFeedback:"",
-      studentFeedback:"",
-      specificTeachFeed:""
+      "name": "",
+      "writeTeachFeed": "",
+      "feedbackOptions": "",
+      "givefeedback": "",
+      "id": "",
+      "teacherFeedback":"",
+      "studentFeedback":"",
+      "specificTeachFeed":""
     };
   }
 
@@ -27,14 +28,14 @@ export default class Feedback extends Component {
   };
 
   handleSubmitTeach = () => {
-    console.log(this.state.selectTeach);
+    console.log(this.state.name);
     console.log(this.state.writeTeachFeed);
-    console.log(this.state.id);
-    // this.params.append("selectTeach",this.state.selectTeach)
+    console.log('hey',this.state.id);
+    this.params.append(this.state.name)
     this.params.append("writeTeachFeed", this.state.writeTeachFeed);
     axios
       .post(
-        `http://localhost:4000/Teacher/${this.state.selectTeach}`,
+        `http://localhost:4000/Teacher/${this.state.name}`,
         this.params,
         {
           headers: {
@@ -45,8 +46,23 @@ export default class Feedback extends Component {
       .then((res) => {
         alert("feedback sent");
         console.log("Feedback Sent");
-      });
+      },this.resetForm()).catch(() => {
+        console.log('Feeback not sent')
+        alert('Feeback not sent')
+      })
   };
+
+  resetForm = () => {
+    this.setState({
+      name:"",
+      message:""
+    })
+  }
+ 
+ 
+ 
+ 
+  
 
   handleStudent = (e) => {
     const { name, value } = e.target;
@@ -101,7 +117,15 @@ export default class Feedback extends Component {
  //   console.log(this.state.id);
  // };
 
-  render() {
+
+
+
+
+
+
+
+
+  render(){
     console.log(this.state.id);
     return (
       <div className="feedback">
@@ -109,18 +133,11 @@ export default class Feedback extends Component {
           <div className="col-lg-6 col-sm-12 col-ex-12">
             <div className="feedbackcards">
               <p className="feedbackcard__name">Feedback for Teachers</p>
-              <select
-                className="feedbackselect"
-                name="selectTeach"
-                value={this.state.selectTeach}
-                onChange={this.handleTeacher}
-              >
+              <select className="feedbackselect" name="name" value={this.state.valuee} onChange={this.handleTeacher} >
                 <option>Select Teachers Name</option>
                 {this.state.teacherFeedback?.map?.((feedback) => {
                   return (
-                    <option
-                      key={feedback?._id}
-                    >
+                    <option key={feedback?._id} valuee={feedback?.name} >
                       {feedback?.name}
                     </option>
                   );
