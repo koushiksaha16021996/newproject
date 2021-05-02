@@ -47,8 +47,6 @@ console.log(this.state.writeTeachFeed);
       .then((res) => {
         alert("feedback sent");
         console.log("Feedback Sent");
-        
-        
       },this.resetForm()).catch(() => {
         console.log('Feeback not sent')
         alert('Feeback not sent')
@@ -59,7 +57,8 @@ console.log(this.state.writeTeachFeed);
    
     this.setState({
       name: null,
-      writeTeachFeed:""
+      writeTeachFeed:"",
+      givefeedback:""
     })
   }
  
@@ -134,19 +133,7 @@ console.log(this.state.writeTeachFeed);
 
  
  
- 
- 
- 
- 
- 
-
-
-
-
-
-
-
-
+     
 
   render(){
     console.log(this.state.id);
