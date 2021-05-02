@@ -31,7 +31,7 @@ export default class Feedback extends Component {
     console.log(this.state.name);
     console.log(this.state.writeTeachFeed);
     console.log('hey',this.state.id);
-    this.params.append(this.state.name)
+    this.params.append("name",this.state.name)
     this.params.append("writeTeachFeed", this.state.writeTeachFeed);
     axios
       .post(
