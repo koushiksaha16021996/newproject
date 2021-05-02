@@ -6,15 +6,26 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     box-shadow: 0 10px 30px rgba(235, 25, 110, 1);
     color: white;
     margin: auto;
     margin-bottom: 20px;
     margin-top: 20px;
+    margin-right: 35%;
+    padding: 5px;
+
   }
+  
   .cards__name {
-    margin-top: 15px;
+    margin: auto;
+    width: 24rem;
+    border: 0px solid;
     font-size: 1.8em;
+    word-wrap: break-word;
+    align-items: center;
+    text-align: center;
+    
   }
   .cards__image {
     height: 160px;
@@ -23,4 +34,16 @@
     border: 5px solid #272133;
     margin-top: 20px;
     box-shadow: 0 10px 50px rgba(235, 25, 110, 1);
+  }
+
+  
+  .container1{
+margin-left: 22%;
+   
+  }
+  .header1{
+    margin-left: 31%;
+  }
+  .header2{
+    margin-right: 14%;
   }

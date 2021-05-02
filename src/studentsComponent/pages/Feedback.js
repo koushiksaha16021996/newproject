@@ -25,17 +25,62 @@ export default class Feedback extends Component {
       ...this.state,
       [name]: value,
     });
+    console.log(this.state.name);
+console.log(this.state.writeTeachFeed);
   };
 
   handleSubmitTeach = () => {
     console.log(this.state.name);
     console.log(this.state.writeTeachFeed);
-    console.log('hey',this.state.id);
     this.params.append("name",this.state.name)
     this.params.append("writeTeachFeed", this.state.writeTeachFeed);
     axios
-      .post(
+      .put(
         `http://localhost:4000/Teacher/${this.state.name}`,
+        this.params,
+        {
+          headers: {
+            "content-Type": "application/x-www-form-urlencoded",
+          },
+        }
+      )
+      .then((res) => {
+        alert("feedback sent");
+        console.log("Feedback Sent");
+        
+        
+      },this.resetForm()).catch(() => {
+        console.log('Feeback not sent')
+        alert('Feeback not sent')
+      })
+  };
+
+  resetForm = () => {
+   
+    this.setState({
+      name: null,
+      writeTeachFeed:""
+    })
+  }
+ 
+// Student -> student Feedback
+
+  handleStudent = (e) => {
+    const { name, value } = e.target;
+    this.setState({
+      ...this.state,
+      [name]: value,
+    });
+  };
+
+  handleSubmitStud = (e) => {
+    console.log(this.state.feedbackOptions);
+    console.log(this.state.givefeedback);
+    this.params.append("name",this.state.name)
+    this.params.append("givefeedback", this.state.givefeedback);
+    axios
+      .put(
+        `http://localhost:4000/Studnt/${this.state.name}`,
         this.params,
         {
           headers: {
@@ -49,33 +94,13 @@ export default class Feedback extends Component {
       },this.resetForm()).catch(() => {
         console.log('Feeback not sent')
         alert('Feeback not sent')
-      })
+      })  
+    
   };
 
-  resetForm = () => {
-    this.setState({
-      name:"",
-      message:""
-    })
-  }
- 
- 
- 
- 
-  
 
-  handleStudent = (e) => {
-    const { name, value } = e.target;
-    this.setState({
-      ...this.state,
-      [name]: value,
-    });
-  };
 
-  handleSubmitStud = (e) => {
-    console.log(this.state.feedbackOptions);
-    console.log(this.state.givefeedback);
-  };
+
 
   //fetching teacher data
   componentDidMount() {
@@ -105,17 +130,15 @@ export default class Feedback extends Component {
       });
       console.log(this.state.specificTeachFeed);
     });
-    //  console.log(this.state.feedback)
-    // alert("Feedback Submitted")
   };
 
- // handleClick = (ID) => {
- //   this.setState({
- //     ...this.state,
- //     id: ID,
- //   });
- //   console.log(this.state.id);
- // };
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
 
 
@@ -133,7 +156,7 @@ export default class Feedback extends Component {
           <div className="col-lg-6 col-sm-12 col-ex-12">
             <div className="feedbackcards">
               <p className="feedbackcard__name">Feedback for Teachers</p>
-              <select className="feedbackselect" name="name" value={this.state.valuee} onChange={this.handleTeacher} >
+              <select className="feedbackselect" name="name" id="drop" value={this.state.valuee} onChange={this.handleTeacher} >
                 <option>Select Teachers Name</option>
                 {this.state.teacherFeedback?.map?.((feedback) => {
                   return (
@@ -163,32 +186,14 @@ export default class Feedback extends Component {
           <div className="col-lg-6 col-sm-12 col-ex-12">
             <div className="feedbackcards">
               <p className="feedbackcard__name">Feedback for Students</p>
-              <select
-                className="feedbackselect"
-                name="feedbackOptions"
-                value={this.state.feedbackOptions}
-                onChange={this.handleStudent}
-              >
-                <option>Select Students Name</option>
+              <select className="feedbackselect" name="name" value={this.state.valuee} onChange={this.handleStudent}>
+                <option >Select Students Name</option>
                 {this.state.studentFeedback?.map?.((studFeed) => {
-                  return <option key={studFeed?.roll}>{studFeed?.name}</option>;
+                  return <option key={studFeed?.roll} valuee={studFeed?.name}>{studFeed?.name}</option>;
                 })}
               </select>
-              <textarea
-                className="form-control feedbacktext"
-                id="exampleFormControlTextarea5"
-                rows="5"
-                name="givefeedback"
-                value={this.state.givefeedback}
-                onChange={this.handleStudent}
-              ></textarea>
-              <button
-                type="button"
-                className="feedbackbtn"
-                onClick={this.handleSubmitStud}
-              >
-                submit
-              </button>
+              <textarea className="form-control feedbacktext" id="exampleFormControlTextarea5" rows="5" name="givefeedback" value={this.state.givefeedback} onChange={this.handleStudent} ></textarea>
+              <button type="button" className="feedbackbtn" onClick={this.handleSubmitStud}>  submit</button>
             </div>
           </div>
         </div>
