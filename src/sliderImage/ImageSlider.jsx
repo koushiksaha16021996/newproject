@@ -37,6 +37,7 @@ const ImageSlider = () => {
 	fontWeight: "500",
 	textShadow: "1px 1px 1px white",
 	color: '#000',
+	background: '#92a8d1',
 	paddingBottom: "1rem",
  }
  const btnPrimary = {
