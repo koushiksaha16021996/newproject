@@ -30,50 +30,75 @@ class AttendanceSheet extends Component {
   constructor(){
     super();
     this.state={
-      date:new Date(),
-      attendStudent: []
-      
+      "date":"",
+      Students:[],
+      attendance:{},
+      presentstudent:[]
     }
     
   }
 
   componentDidMount(){
-    //axios.get("http://localhost:4000/students").then(res=>{
-    //  this.setState({
-    //    Students:res.data
-    //  })
-    //    console.log(this.state.Students)
+    axios.get("http://localhost:4000/students").then(res=>{
+      this.setState({
+        Students:res.data
+      })
+        console.log(this.state.Students)
+    })
+
+    var d= new Date();
+    var D= d.getDate()+"-"+(d.getMonth()+1)+"-"+d.getFullYear();
+
+    axios.get(`http://localhost:4000/attendance/${D}`).then(res=>{
+        this.setState({
+          attendance : res.data
+        })
+        //console.log(this.state.attendance.students[0].length)
+       // this.state.attendance.students.map(item=>{
+       //   console.log(item)
+       // })
+    }) 
+  }
+  
+  renderStudent=()=>{
+    var re=[];
+    //console.log("upcomming",this.state.attendance)
+    //for(var i=0;i<this.state.Students.length;i++){
+    //  console.log("new students",!this.state.attendance.students.includes(this.state.Students[i]._id))
+    //  
+    //  if(!this.state.attendance.students.includes(this.state.Students[i]?._id)){
+    //    re.push(this.state.Students[i])
+    //    console.log("xd",this.state.Students[i])
+    //  }
+    //}
+    //this.setState({
+    //  ...this.state,
+    //  presentstudent : re
     //})
+    //console.log("renderstudent",this.state.presentstudent)
+    //for(var i=0;i<this.state.attendance.students.length;i++){
+    //  
+    //}
+    this.state.attendance.students.map(item=>{
+      axios.get(`http://localhost:4000/student/${item}`).then(res=>{
+        re.push(res.data)
+      })
+    })
+    this.setState({
+      ...this.state,
+      presentstudent : re
+    })
+      
 
-   //var d= new Date(this.state.date);
-   //var D= d.getDate()+"-"+(d.getMonth()+1)+"-"+d.getFullYear();
-
-   //axios.get(`http://localhost:4000/attendance/${D}`).then(res=>{
-   //    this.setState({
-   //      attendStudent : res.data
-   //    })
-   //    console.log(this.state.attendStudent)
-   //   // this.state.attendance.students.map(item=>{
-   //   //   console.log(item)
-   //   // })
-   //}) 
   }
 
-  handledateChange=(e)=>{
+  dateChange=(e)=>{
+    const {name,value}=e.target
     this.setState({
-        date: e.target.value
+      ...this.state,
+      [name]:value
     })
     console.log(this.state.date)
-    //var d= new Date(this.state.date);
-    //var D= d.getDate()+"-"+(d.getMonth()+1)+"-"+d.getFullYear();
-  }
-  showstudent=()=>{
-    axios.get(`http://localhost:4000/attendance/${this.state.date}`).then(res=>{
-    this.setState({
-      attendStudent : res.data
-    })
-    console.log(this.state.attendStudent)
-})
   }
 
   render(){
@@ -89,8 +114,8 @@ class AttendanceSheet extends Component {
             <div className="col-lg-6">
                 <div className="centerdiv">
                 <h5 className="atten">Attendance Sheet</h5>
-                <input className="atten"  type="date"  value={this.state.date} onChange={this.handledateChange}/>
-                <button className="btn btn-danger atten" onClick={()=>this.showstudent()}>click to display</button>
+                
+                <button className="btn btn-danger" onClick={()=>this.renderStudent()}>show</button>
                 <table className="tHeader">
                   <thead className="tablehead">
                     <tr className="tablerow">
@@ -98,13 +123,11 @@ class AttendanceSheet extends Component {
                       <th className="tablehead1">Name</th>
                     </tr>
                   </thead>
-                  <tbody className="tablebody">
-                    {this.state.attendStudent.map(item=>
-                    <tr className="tablerow">
-                      <td className="tabledata">{item?.roll}</td>
-                      <td className="tabledata">{item?.name}</td>
-                    </tr>)}
-                  </tbody>
+                 {/*} <tbody className="tablebody">{this.state.attendance.students.map(item =><tr className="tablerow">
+                                                                                      <td className="tabledata">{item.Students}</td> 
+                                                                                        </tr>)} 
+                  </tbody>*/}
+
                 </table>
                 </div>
             </div>
